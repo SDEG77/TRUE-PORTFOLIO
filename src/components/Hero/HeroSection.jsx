@@ -7,6 +7,7 @@ import HeroContact from "./HeroContact";
 import EducationalAttainment from "./HeroAttainment";
 import HeroAttainmentMobile from "./Mobile/HeroAttainment"; // mobile version
 import HeroPortfolio from "./HeroPortfolio";
+import HeroPortfolioMobile from "./Mobile/HeroPortfolio"; // mobile portfolio version
 
 function HeroSection() {
   const [activeSection, setActiveSection] = useState("about"); // "about" | "skills" | "mobile-skills" | ...
@@ -20,11 +21,12 @@ function HeroSection() {
   const bgColors = {
     about: ["#4c1d95", "#3730a3", "#7c3aed"],
     skills: ["#312e81", "#7e22ce", "#ec4899"],
-    "mobile-skills": ["#312e81", "#7e22ce", "#ec4899"], // same as skills
+    "mobile-skills": ["#312e81", "#7e22ce", "#ec4899"],
     contact: ["#064e3b", "#0f766e", "#1e3a8a"],
     education: ["#78350f", "#b45309", "#f59e0b"],
-    "mobile-education": ["#78350f", "#b45309", "#f59e0b"], // same as desktop education
+    "mobile-education": ["#78350f", "#b45309", "#f59e0b"],
     portfolio: ["#1e293b", "#0f172a", "#0ea5e9"],
+    "mobile-portfolio": ["#1e293b", "#0f172a", "#0ea5e9"],
   };
 
   const currentGradient = bgColors[activeSection];
@@ -77,6 +79,12 @@ function HeroSection() {
           {activeSection === "portfolio" && (
             <motion.div key="portfolio" variants={fadeSlideVariants} initial="hidden" animate="visible" exit="exit" className="absolute w-full h-full flex justify-center items-center">
               <HeroPortfolio />
+            </motion.div>
+          )}
+
+          {activeSection === "mobile-portfolio" && (
+            <motion.div key="mobile-portfolio" variants={fadeSlideVariants} initial="hidden" animate="visible" exit="exit" className="absolute w-full h-full flex justify-center items-center">
+              <HeroPortfolioMobile />
             </motion.div>
           )}
         </AnimatePresence>
@@ -138,10 +146,21 @@ function HeroSection() {
           Education
         </button>
 
+        {/* Desktop Portfolio */}
         <button
           onClick={() => setActiveSection("portfolio")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hidden md:block ${
             activeSection === "portfolio" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
+          }`}
+        >
+          Portfolio
+        </button>
+
+        {/* Mobile-only Portfolio */}
+        <button
+          onClick={() => setActiveSection("mobile-portfolio")}
+          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 block md:hidden ${
+            activeSection === "mobile-portfolio" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
           Portfolio
