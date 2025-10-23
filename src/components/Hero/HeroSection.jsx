@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import HeroFront from "./HeroFront";
 import HeroSkills from "./HeroSkills";
 import HeroContact from "./HeroContact";
-import EducationalAttainment from "./HeroAttainment"; // new component
+import EducationalAttainment from "./HeroAttainment";
+import HeroPortfolio from "./HeroPortfolio"; // new component
 
 function HeroSection() {
-  const [activeSection, setActiveSection] = useState("about"); // "about" | "skills" | "contact" | "education"
+  const [activeSection, setActiveSection] = useState("about"); // "about" | "skills" | "contact" | "education" | "portfolio"
 
   const fadeSlideVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.98 },
@@ -14,12 +15,13 @@ function HeroSection() {
     exit: { opacity: 0, y: -30, scale: 0.98, transition: { duration: 0.5, ease: "easeInOut" } },
   };
 
-  // Background gradient colors (as tailwind HEX equivalents)
+  // Background gradient colors (tailwind HEX equivalents)
   const bgColors = {
-    about: ["#4c1d95", "#3730a3", "#7c3aed"],     // purple-900, indigo-800, purple-700
-    skills: ["#312e81", "#7e22ce", "#ec4899"],    // indigo-900, purple-800, pink-700
-    contact: ["#064e3b", "#0f766e", "#1e3a8a"],   // green-900, teal-800, blue-700
-    education: ["#78350f", "#b45309", "#f59e0b"], // orange-900, amber-700, yellow-500
+    about: ["#4c1d95", "#3730a3", "#7c3aed"],        // purple-900, indigo-800, purple-700
+    skills: ["#312e81", "#7e22ce", "#ec4899"],       // indigo-900, purple-800, pink-700
+    contact: ["#064e3b", "#0f766e", "#1e3a8a"],      // green-900, teal-800, blue-700
+    education: ["#78350f", "#b45309", "#f59e0b"],    // orange-900, amber-700, yellow-500
+    portfolio: ["#1e293b", "#0f172a", "#0ea5e9"],    // slate-800, slate-900, sky-500
   };
 
   const currentGradient = bgColors[activeSection];
@@ -84,6 +86,19 @@ function HeroSection() {
               <EducationalAttainment />
             </motion.div>
           )}
+
+          {activeSection === "portfolio" && (
+            <motion.div
+              key="portfolio"
+              variants={fadeSlideVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="absolute w-full h-full flex justify-center items-center"
+            >
+              <HeroPortfolio />
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
 
@@ -115,7 +130,7 @@ function HeroSection() {
         >
           My Skills
         </button>
-        
+
         <button
           onClick={() => setActiveSection("education")}
           className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
@@ -125,6 +140,17 @@ function HeroSection() {
           }`}
         >
           Education
+        </button>
+
+        <button
+          onClick={() => setActiveSection("portfolio")}
+          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+            activeSection === "portfolio"
+              ? "bg-white text-black shadow-lg"
+              : "border border-white text-white hover:bg-white hover:text-black"
+          }`}
+        >
+          Portfolio
         </button>
 
         <button
