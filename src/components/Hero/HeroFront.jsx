@@ -3,7 +3,7 @@ import selfPortrait from "../../assets/images/self-portrait.png";
 
 function HeroFront() {
   return (
-    <div className="flex flex-col justify-center items-center text-center px-6">
+    <div className="flex flex-col justify-center items-center text-center px-6 -mt-10">
       {/* Portrait */}
       <motion.img
         src={selfPortrait}

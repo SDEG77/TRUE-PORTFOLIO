@@ -104,7 +104,10 @@ function HeroSection() {
 
       {/* Buttons */}
       <motion.div
-        className="mt-10 flex flex-wrap gap-4 justify-center"
+        className="mt-10 flex flex-wrap gap-4 justify-center 
+                  bg-white/10 backdrop-blur-md rounded-3xl p-4 
+                  fixed bottom-4  -translate-x-1/2 z-50 
+                  w-[90%] md:w-auto"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
@@ -164,6 +167,7 @@ function HeroSection() {
           Contact Me
         </button>
       </motion.div>
+
     </motion.section>
   );
 }

@@ -88,7 +88,7 @@ function HeroSkills() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold mb-6 text-indigo-300"
+          className="text-3xl md:text-5xl font-bold mb-6 -mt-10 text-indigo-300"
         >
           My Skills
         </motion.h2>
