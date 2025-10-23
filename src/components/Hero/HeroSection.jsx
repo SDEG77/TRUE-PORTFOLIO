@@ -5,6 +5,7 @@ import HeroSkills from "./HeroSkills";
 import HeroSkillsMobile from "./Mobile/HeroSkills"; // import the mobile version
 import HeroContact from "./HeroContact";
 import EducationalAttainment from "./HeroAttainment";
+import HeroAttainmentMobile from "./Mobile/HeroAttainment"; // mobile version
 import HeroPortfolio from "./HeroPortfolio";
 
 function HeroSection() {
@@ -22,6 +23,7 @@ function HeroSection() {
     "mobile-skills": ["#312e81", "#7e22ce", "#ec4899"], // same as skills
     contact: ["#064e3b", "#0f766e", "#1e3a8a"],
     education: ["#78350f", "#b45309", "#f59e0b"],
+    "mobile-education": ["#78350f", "#b45309", "#f59e0b"], // same as desktop education
     portfolio: ["#1e293b", "#0f172a", "#0ea5e9"],
   };
 
@@ -63,6 +65,12 @@ function HeroSection() {
           {activeSection === "education" && (
             <motion.div key="education" variants={fadeSlideVariants} initial="hidden" animate="visible" exit="exit" className="absolute w-full h-full flex justify-center items-center">
               <EducationalAttainment />
+            </motion.div>
+          )}
+
+          {activeSection === "mobile-education" && (
+            <motion.div key="mobile-education" variants={fadeSlideVariants} initial="hidden" animate="visible" exit="exit" className="absolute w-full h-full flex justify-center items-center">
+              <HeroAttainmentMobile />
             </motion.div>
           )}
 
@@ -110,10 +118,21 @@ function HeroSection() {
           My Skills
         </button>
 
+        {/* Desktop-only Education */}
         <button
           onClick={() => setActiveSection("education")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hidden md:block ${
             activeSection === "education" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
+          }`}
+        >
+          Education
+        </button>
+
+        {/* Mobile-only Education */}
+        <button
+          onClick={() => setActiveSection("mobile-education")}
+          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 block md:hidden ${
+            activeSection === "mobile-education" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
           Education
