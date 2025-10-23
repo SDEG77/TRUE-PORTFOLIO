@@ -99,7 +99,7 @@ function HeroSection() {
       >
         <button
           onClick={() => setActiveSection("about")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+          className={`px-12 py-3 text-base rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 ${
             activeSection === "about" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
@@ -109,7 +109,7 @@ function HeroSection() {
         {/* Desktop-only My Skills */}
         <button
           onClick={() => setActiveSection("skills")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hidden md:block ${
+          className={`px-12 py-3 text-base rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 hidden md:block ${
             activeSection === "skills" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
@@ -119,7 +119,7 @@ function HeroSection() {
         {/* Mobile-only My Skills */}
         <button
           onClick={() => setActiveSection("mobile-skills")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 block md:hidden ${
+          className={`px-12 py-3 text-base rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 block md:hidden ${
             activeSection === "mobile-skills" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
@@ -129,7 +129,7 @@ function HeroSection() {
         {/* Desktop-only Education */}
         <button
           onClick={() => setActiveSection("education")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hidden md:block ${
+          className={`px-12 py-3 text-base rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 hidden md:block ${
             activeSection === "education" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
@@ -139,7 +139,7 @@ function HeroSection() {
         {/* Mobile-only Education */}
         <button
           onClick={() => setActiveSection("mobile-education")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 block md:hidden ${
+          className={`px-12 py-3 text-base rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 block md:hidden ${
             activeSection === "mobile-education" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
@@ -149,7 +149,7 @@ function HeroSection() {
         {/* Desktop Portfolio */}
         <button
           onClick={() => setActiveSection("portfolio")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hidden md:block ${
+          className={`px-12 py-3 text-base rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 hidden md:block ${
             activeSection === "portfolio" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
@@ -159,7 +159,7 @@ function HeroSection() {
         {/* Mobile-only Portfolio */}
         <button
           onClick={() => setActiveSection("mobile-portfolio")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 block md:hidden ${
+          className={`px-12 py-3 text-base rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 block md:hidden ${
             activeSection === "mobile-portfolio" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >
@@ -168,7 +168,7 @@ function HeroSection() {
 
         <button
           onClick={() => setActiveSection("contact")}
-          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+          className={`px-12 py-3 text-base rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 ${
             activeSection === "contact" ? "bg-white text-black shadow-lg" : "border border-white text-white hover:bg-white hover:text-black"
           }`}
         >

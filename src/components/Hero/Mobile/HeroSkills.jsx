@@ -45,9 +45,9 @@ function HeroSkillsMobile() {
 
   if (!isMobile) return <HeroSkills />;
 
-  const hardSkills = ["OOP", "Full Stack", "Database", "Mobile Dev", "Traditional Art", "Digital Art"];
+  const hardSkills = ["Object Oriented Programming", "Full Stack Web Devopment", "Database Management", "Mobile Devopment", "Traditional Art", "Digital Art"];
   const softSkills = ["Problem-Solving", "Research", "Collaboration", "Adaptability", "Creativity", "Time Management"];
-  const programmingSkills = ["Python", "JS", "PHP", "Java", "React", "Node.js", "Laravel", "MySQL", "MongoDB"];
+  const programmingSkills = ["Laravel", "React & React Native", "JS", "PHP", "Python", "Java", "Node.js", "MySQL", "MongoDB"];
   const skillMap = { hard: hardSkills, soft: softSkills, programming: programmingSkills };
 
   return (
@@ -60,7 +60,7 @@ function HeroSkillsMobile() {
           <button
             key={cat}
             onClick={() => setSelectedSkill(cat)}
-            className={`flex-shrink-0 px-4 py-2 rounded-2xl font-semibold border transition-colors duration-300 ${
+            className={`flex-shrink-0 px-4 py-3 text-base rounded-2xl font-semibold border transition-colors duration-300 ${
               selectedSkill === cat
                 ? "bg-white text-black"
                 : "border-white text-white hover:bg-white hover:text-black"
@@ -93,7 +93,7 @@ function HeroSkillsMobile() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="bg-gray-800/30 backdrop-blur-[2px] border border-gray-700/30 rounded-2xl p-4 text-white font-medium text-lg"
+              className="bg-gray-800/30 backdrop-blur-[2px] border border-gray-700/30 rounded-2xl p-4 text-white font-medium text-xl"
             >
               {skill}
             </motion.div>

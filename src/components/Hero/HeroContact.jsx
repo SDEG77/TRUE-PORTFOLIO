@@ -24,7 +24,7 @@ function HeroContact() {
     >
       {/* Header */}
       <motion.h2
-        className="text-3xl md:text-5xl font-bold mb-6 text-green-300"
+        className="text-6xl md:text-5xl font-bold mb-6 -mt-72 md:-mt-12 text-green-300"
         variants={itemVariants}
       >
         Get In Touch
@@ -32,7 +32,7 @@ function HeroContact() {
 
       {/* Description */}
       <motion.p
-        className="text-green-100 max-w-xl mb-10 leading-relaxed"
+        className="text-green-100 max-w-xl mb-10 text-xl md:text-lg leading-relaxed"
         variants={itemVariants}
       >
         Feel free to reach out to me through email or connect on my social platforms.
@@ -48,7 +48,7 @@ function HeroContact() {
           whileTap={{ scale: 0.95 }}
           className="text-green-400 transition-all duration-300 hover:text-green-300"
         >
-          <FaFacebook className="w-16 h-16" />
+          <FaFacebook className="w-20 h-20 md:w-16 md:h-16" />
         </motion.a>
 
         <motion.a
@@ -59,7 +59,7 @@ function HeroContact() {
           whileTap={{ scale: 0.95 }}
           className="text-teal-400 transition-all duration-300 hover:text-teal-300"
         >
-          <FaLinkedin className="w-16 h-16" />
+          <FaLinkedin className="w-20 h-20 md:w-16 md:h-16" />
         </motion.a>
       </motion.div>
 
@@ -74,7 +74,7 @@ function HeroContact() {
         variants={itemVariants}
       >
         <SiGmail className="text-white w-8 h-8" />
-        <span className="font-semibold text-white text-lg">
+        <span className="font-semibold text-white text-2xl md:text-lg">
           sde.gabriel.77@gmail.com
         </span>
       </motion.a>

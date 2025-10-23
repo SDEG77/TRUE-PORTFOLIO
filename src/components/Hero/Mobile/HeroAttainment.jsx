@@ -19,7 +19,7 @@ function HeroAttainmentMobile() {
   return (
     <motion.div className="flex flex-col items-center text-center px-4">
       <motion.h2
-        className="text-3xl font-bold mb-6 text-yellow-200 -mt-72"
+        className="text-4xl whitespace-nowrap font-bold mb-6 text-yellow-200 -mt-72"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
       >
@@ -32,15 +32,15 @@ function HeroAttainmentMobile() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
       >
-        <h3 className="text-lg font-semibold mb-1">{educationData.degree}</h3>
+        <h3 className="text-xl font-semibold mb-1">{educationData.degree}</h3>
         <p className="text-gray-200 mb-1">{educationData.school}</p>
-        <p className="text-gray-300">{educationData.year}</p>
+        <p className="text-gray-300 text-lg">{educationData.year}</p>
       </motion.div>
 
       {/* Seminars Toggle */}
       <motion.button
         onClick={() => setShowSeminars(prev => !prev)}
-        className="mt-2 px-4 py-2 rounded-2xl font-semibold bg-white/20 hover:bg-white/30 transition-all duration-300 text-white shadow-lg"
+        className="mt-2 px-4 py-2 rounded-2xl font-semibold bg-white/20 hover:bg-white/30 transition-all duration-300 text-white text-2xl shadow-lg"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
       >
@@ -51,7 +51,7 @@ function HeroAttainmentMobile() {
       <AnimatePresence>
         {showSeminars && (
           <motion.div
-            className="w-full mt-4 overflow-visible"
+            className="w-full mt-4 -mb-16 overflow-visible"
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0, transition: { duration: 0.35 } }}
@@ -65,9 +65,9 @@ function HeroAttainmentMobile() {
                   animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: index * 0.1 } }}
                   exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
                 >
-                  <h4 className="text-md font-semibold">{seminar.title}</h4>
-                  <p className="text-gray-200 text-sm">{seminar.presenter}</p>
-                  <p className="text-gray-300 text-sm">{seminar.date}</p>
+                  <h4 className="text-lg font-semibold">{seminar.title}</h4>
+                  <p className="text-gray-200 text-base">{seminar.presenter}</p>
+                  <p className="text-gray-300 text-lg">{seminar.date}</p>
                 </motion.div>
               ))}
             </div>
