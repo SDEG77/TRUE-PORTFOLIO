@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import HeroFront from "./HeroFront";
 import HeroSkills from "./HeroSkills";
 import HeroContact from "./HeroContact";
+import EducationalAttainment from "./HeroAttainment"; // new component
 
 function HeroSection() {
-  const [activeSection, setActiveSection] = useState("about"); // "about" | "skills" | "contact"
+  const [activeSection, setActiveSection] = useState("about"); // "about" | "skills" | "contact" | "education"
 
   const fadeSlideVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.98 },
@@ -15,9 +16,10 @@ function HeroSection() {
 
   // Background gradient colors (as tailwind HEX equivalents)
   const bgColors = {
-    about: ["#4c1d95", "#3730a3", "#7c3aed"], // purple-900, indigo-800, purple-700
-    skills: ["#312e81", "#7e22ce", "#ec4899"], // indigo-900, purple-800, pink-700
-    contact: ["#064e3b", "#0f766e", "#1e3a8a"], // green-900, teal-800, blue-700
+    about: ["#4c1d95", "#3730a3", "#7c3aed"],     // purple-900, indigo-800, purple-700
+    skills: ["#312e81", "#7e22ce", "#ec4899"],    // indigo-900, purple-800, pink-700
+    contact: ["#064e3b", "#0f766e", "#1e3a8a"],   // green-900, teal-800, blue-700
+    education: ["#78350f", "#b45309", "#f59e0b"], // orange-900, amber-700, yellow-500
   };
 
   const currentGradient = bgColors[activeSection];
@@ -69,6 +71,19 @@ function HeroSection() {
               <HeroContact />
             </motion.div>
           )}
+
+          {activeSection === "education" && (
+            <motion.div
+              key="education"
+              variants={fadeSlideVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="absolute w-full h-full flex justify-center items-center"
+            >
+              <EducationalAttainment />
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
 
@@ -99,6 +114,17 @@ function HeroSection() {
           }`}
         >
           My Skills
+        </button>
+        
+        <button
+          onClick={() => setActiveSection("education")}
+          className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+            activeSection === "education"
+              ? "bg-white text-black shadow-lg"
+              : "border border-white text-white hover:bg-white hover:text-black"
+          }`}
+        >
+          Education
         </button>
 
         <button
