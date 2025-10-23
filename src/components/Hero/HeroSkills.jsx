@@ -24,7 +24,7 @@ function HeroSkills() {
 
   // Slider positions (adjust these to fine-tune)
   const sliderPositions = {
-    hard: -7, // padding from left
+    hard: -7, 
     soft: sliderWidth - 8,
     programming: sliderWidth * 2 - 8,
   };
@@ -88,7 +88,7 @@ function HeroSkills() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold mb-6"
+          className="text-3xl md:text-5xl font-bold mb-6 text-indigo-300"
         >
           My Skills
         </motion.h2>
@@ -96,7 +96,7 @@ function HeroSkills() {
         {/* Slider Toggle */}
         <div
           ref={containerRef}
-          className="relative flex bg-white/10 border border-white/20 backdrop-blur-md rounded-full p-4 mb-12 w-96 md:w-[36rem] h-20 overflow-hidden select-none"
+          className="relative flex bg-gray-900/20 border border-gray-700/40 backdrop-blur-md rounded-full p-4 mb-12 w-96 md:w-[36rem] h-20 overflow-hidden select-none"
         >
           {/* Slider Highlight */}
           <motion.div
@@ -115,7 +115,7 @@ function HeroSkills() {
               x: sliderPositions[selectedSkill] || 0,
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="absolute bg-gradient-to-r from-indigo-500 to-purple-500 cursor-grab active:cursor-grabbing"
+            className="absolute bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 cursor-grab active:cursor-grabbing shadow-lg"
             style={{
               width: sliderWidth - sliderStyle.widthOffset,
               top: sliderStyle.topOffset,
@@ -178,11 +178,11 @@ function HeroSkills() {
                   whileHover={{
                     scale: 1.06,
                     background:
-                      "linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(168,85,247,0.15) 100%)",
+                      "linear-gradient(135deg, rgba(128,90,213,0.2) 0%, rgba(168,85,247,0.2) 100%)",
                     transition: { duration: 0.4, ease: "easeOut" },
                   }}
-                  className="flex items-center justify-center text-center px-4 h-28 rounded-2xl border border-white/10 bg-white/10 backdrop-blur-sm 
-                             text-white text-lg font-medium transition-all duration-500 ease-out"
+                  className="flex items-center justify-center text-center px-4 h-28 rounded-2xl border border-gray-700/30 bg-gray-800/30 backdrop-blur-sm 
+                             text-white text-lg font-medium transition-all duration-500 ease-out shadow-md"
                 >
                   {skill}
                 </motion.div>
